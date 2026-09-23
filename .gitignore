@@ -1,0 +1,14 @@
+.DS_Store
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+outputs/
+runs/
+weights/*.pt
+weights/*.pth
+weights/*.safetensors
+weights/*.zip

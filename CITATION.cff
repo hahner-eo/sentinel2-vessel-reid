@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+type: software
+title: "Sentinel-2 vessel re-identification"
+message: "Please cite this software and the associated article."
+authors:
+  - name: "hahner-eo"
+version: "1.0.0"
+date-released: 2026-09-24
+keywords:
+  - Sentinel-2
+  - vessel identification
+  - image retrieval
+license: MIT
+repository-code: "https://github.com/hahner-eo/sentinel2-vessel-reid"

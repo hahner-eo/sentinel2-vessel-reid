@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sentinel2-vessel-reid"
+version = "1.0.0"
+description = "Reproducibility code for Sentinel-2 vessel identity retrieval"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = {text = "MIT"}
+authors = [{name = "hahner-eo"}]
+keywords = ["Sentinel-2", "remote sensing", "vessel identification", "image retrieval"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Scientific/Engineering :: GIS",
+]
+dependencies = [
+  "numpy>=1.26,<3",
+  "rasterio>=1.4,<2",
+  "torch==2.7.1",
+]
+
+[project.urls]
+Repository = "https://github.com/hahner-eo/sentinel2-vessel-reid"
+Issues = "https://github.com/hahner-eo/sentinel2-vessel-reid/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3,<9", "ruff>=0.12,<1"]
+
+[project.scripts]
+vessel-reid = "vessel_reid.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["B", "C4", "E", "F", "I", "PIE", "PT", "RUF", "SIM", "UP"]
